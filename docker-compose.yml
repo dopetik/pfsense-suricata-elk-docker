@@ -29,7 +29,7 @@ services:
   kibana:
     image: docker.elastic.co/kibana/kibana:${TAG}
     container_name: kibana
-    ports: ['127.0.0.1:5601:5601']
+    ports: ['195.154.252.222:5601:5601']
     networks: ['stack']
     depends_on: ['elasticsearch']
 
@@ -42,7 +42,7 @@ services:
       - ./config/logstash/pipeline/:/usr/share/logstash/pipeline/
       - ./config/logstash/patterns/:/usr/share/logstash/patterns/
      # - ./config/logstash/GeoLiteCity.dat:/usr/share/logstash/GeoLiteCity.dat
-    ports: ['192.168.1.13:1514:1514/udp']
+    ports: ['195.154.252.222:1514:1514/udp']
     networks: ['stack']
     depends_on: ['elasticsearch']
         
